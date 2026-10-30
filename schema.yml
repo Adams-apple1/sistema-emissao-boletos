@@ -1,0 +1,920 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /api/boletos/:
+    get:
+      operationId: boletos_list
+      tags:
+      - boletos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Boleto'
+          description: ''
+    post:
+      operationId: boletos_create
+      tags:
+      - boletos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Boleto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Boleto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Boleto'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Boleto'
+          description: ''
+  /api/boletos/{id}/:
+    get:
+      operationId: boletos_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this boleto.
+        required: true
+      tags:
+      - boletos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Boleto'
+          description: ''
+    put:
+      operationId: boletos_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this boleto.
+        required: true
+      tags:
+      - boletos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Boleto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Boleto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Boleto'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Boleto'
+          description: ''
+    patch:
+      operationId: boletos_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this boleto.
+        required: true
+      tags:
+      - boletos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedBoleto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedBoleto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedBoleto'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Boleto'
+          description: ''
+    delete:
+      operationId: boletos_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this boleto.
+        required: true
+      tags:
+      - boletos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/emitentes/:
+    get:
+      operationId: emitentes_list
+      tags:
+      - emitentes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Emitente'
+          description: ''
+    post:
+      operationId: emitentes_create
+      tags:
+      - emitentes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Emitente'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Emitente'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Emitente'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emitente'
+          description: ''
+  /api/emitentes/{id}/:
+    get:
+      operationId: emitentes_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this emitente.
+        required: true
+      tags:
+      - emitentes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emitente'
+          description: ''
+    put:
+      operationId: emitentes_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this emitente.
+        required: true
+      tags:
+      - emitentes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Emitente'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Emitente'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Emitente'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emitente'
+          description: ''
+    patch:
+      operationId: emitentes_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this emitente.
+        required: true
+      tags:
+      - emitentes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedEmitente'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedEmitente'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedEmitente'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emitente'
+          description: ''
+    delete:
+      operationId: emitentes_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this emitente.
+        required: true
+      tags:
+      - emitentes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/pagadores/:
+    get:
+      operationId: pagadores_list
+      tags:
+      - pagadores
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pagador'
+          description: ''
+    post:
+      operationId: pagadores_create
+      tags:
+      - pagadores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pagador'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pagador'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pagador'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagador'
+          description: ''
+  /api/pagadores/{id}/:
+    get:
+      operationId: pagadores_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pagador.
+        required: true
+      tags:
+      - pagadores
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagador'
+          description: ''
+    put:
+      operationId: pagadores_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pagador.
+        required: true
+      tags:
+      - pagadores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pagador'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pagador'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pagador'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagador'
+          description: ''
+    patch:
+      operationId: pagadores_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pagador.
+        required: true
+      tags:
+      - pagadores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPagador'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPagador'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPagador'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagador'
+          description: ''
+    delete:
+      operationId: pagadores_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pagador.
+        required: true
+      tags:
+      - pagadores
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - ht
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+components:
+  schemas:
+    Boleto:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        valor:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        data_vencimento:
+          type: string
+          format: date
+        seu_numero:
+          type: string
+          maxLength: 18
+        numero_parcela:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+        mensagem:
+          type: string
+        multa_percentual:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,2})?$
+        juros_mes_percentual:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,2})?$
+        dias_protesto:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        nosso_numero:
+          type: string
+          maxLength: 30
+        linha_digitavel:
+          type: string
+          maxLength: 100
+        codigo_barras:
+          type: string
+          maxLength: 100
+        criado_em:
+          type: string
+          format: date-time
+          readOnly: true
+        emitente:
+          type: integer
+        pagador:
+          type: integer
+      required:
+      - criado_em
+      - data_vencimento
+      - emitente
+      - id
+      - pagador
+      - seu_numero
+      - valor
+    Emitente:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        razao_social:
+          type: string
+          maxLength: 150
+        cnpj:
+          type: string
+          maxLength: 14
+        cooperativa:
+          type: string
+          maxLength: 10
+        agencia:
+          type: string
+          maxLength: 10
+        conta_corrente:
+          type: string
+          maxLength: 20
+        numero_cliente:
+          type: string
+          maxLength: 30
+        modalidade:
+          type: string
+          maxLength: 10
+        convenio:
+          type: string
+          maxLength: 30
+        criado_em:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - agencia
+      - cnpj
+      - conta_corrente
+      - convenio
+      - cooperativa
+      - criado_em
+      - id
+      - modalidade
+      - numero_cliente
+      - razao_social
+    Pagador:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          maxLength: 150
+        cpf_cnpj:
+          type: string
+          maxLength: 14
+        email:
+          oneOf:
+          - type: string
+            format: email
+            maxLength: 254
+          - type: string
+            maxLength: 0
+        cep:
+          type: string
+          maxLength: 8
+        endereco:
+          type: string
+          maxLength: 150
+        bairro:
+          type: string
+          maxLength: 100
+        cidade:
+          type: string
+          maxLength: 100
+        uf:
+          type: string
+          maxLength: 2
+        criado_em:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - bairro
+      - cep
+      - cidade
+      - cpf_cnpj
+      - criado_em
+      - endereco
+      - id
+      - nome
+      - uf
+    PatchedBoleto:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        valor:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        data_vencimento:
+          type: string
+          format: date
+        seu_numero:
+          type: string
+          maxLength: 18
+        numero_parcela:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+        mensagem:
+          type: string
+        multa_percentual:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,2})?$
+        juros_mes_percentual:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,2})?$
+        dias_protesto:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        nosso_numero:
+          type: string
+          maxLength: 30
+        linha_digitavel:
+          type: string
+          maxLength: 100
+        codigo_barras:
+          type: string
+          maxLength: 100
+        criado_em:
+          type: string
+          format: date-time
+          readOnly: true
+        emitente:
+          type: integer
+        pagador:
+          type: integer
+    PatchedEmitente:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        razao_social:
+          type: string
+          maxLength: 150
+        cnpj:
+          type: string
+          maxLength: 14
+        cooperativa:
+          type: string
+          maxLength: 10
+        agencia:
+          type: string
+          maxLength: 10
+        conta_corrente:
+          type: string
+          maxLength: 20
+        numero_cliente:
+          type: string
+          maxLength: 30
+        modalidade:
+          type: string
+          maxLength: 10
+        convenio:
+          type: string
+          maxLength: 30
+        criado_em:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedPagador:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          maxLength: 150
+        cpf_cnpj:
+          type: string
+          maxLength: 14
+        email:
+          oneOf:
+          - type: string
+            format: email
+            maxLength: 254
+          - type: string
+            maxLength: 0
+        cep:
+          type: string
+          maxLength: 8
+        endereco:
+          type: string
+          maxLength: 150
+        bairro:
+          type: string
+          maxLength: 100
+        cidade:
+          type: string
+          maxLength: 100
+        uf:
+          type: string
+          maxLength: 2
+        criado_em:
+          type: string
+          format: date-time
+          readOnly: true
+    StatusEnum:
+      enum:
+      - rascunho
+      - registrado
+      - pago
+      - vencido
+      - baixado
+      - erro
+      type: string
+      description: |-
+        * `rascunho` - Rascunho
+        * `registrado` - Registrado
+        * `pago` - Pago
+        * `vencido` - Vencido
+        * `baixado` - Baixado
+        * `erro` - Erro
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

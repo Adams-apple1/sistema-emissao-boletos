@@ -1,0 +1,30 @@
+
+# Segredos e variáveis de ambiente
+.env
+.env.*
+
+# Ambientes virtuais
+.venv/
+venv/
+.conda-env/
+
+# Banco de dados local
+db.sqlite3
+
+# Cache Python
+__pycache__/
+*.py[cod]
+
+# Configurações locais do editor
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+
+# Exercícios antigos
+cs50/
+tarefas_projeto_banco/
+emissao_boletos/
+
+# Arquivo de teste antigo
+tarefa.py

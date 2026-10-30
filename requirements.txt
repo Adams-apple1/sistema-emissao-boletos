@@ -1,0 +1,6 @@
+Django==6.1.2
+djangorestframework
+drf-spectacular
+python-dotenv
+requests
+reportlab
